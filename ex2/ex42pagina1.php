@@ -7,11 +7,11 @@
 </head>
 <body>
     
-    <p>ENREGISTRA NOMBRE</p>
-
-    <form method="post" action="ex41pagina2.php">
-        <label for="ocult"></label>
-        <input type="number" name="ocult">
+    <p>ENREGISTRA FRASE</p>
+    
+    <form method="post" action="ex42pagina2.php">
+        <label for="numero"></label>
+        <input type="number" name="frase1">
         <input type="submit">
     </form>
 
