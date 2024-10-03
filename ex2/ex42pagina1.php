@@ -7,10 +7,10 @@
 </head>
 <body>
     
-    <p>ENREGISTRA NOMBRE</p>
+    <p>ENREGISTRA FRASE</p>
 
-    <form method="post" action="ex41pagina2.php">
-        <input type="number" name="ocult">
+    <form method="post" action="ex42pagina2.php">
+        <input type="text" name="frase1">
         <input type="submit">
     </form>
 
