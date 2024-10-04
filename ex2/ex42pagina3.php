@@ -7,33 +7,33 @@
 </head>
 <body>
 
-    <p>ENDEVINA EL NOMBRE</p>
+    <p>COINCIDÈNCIES</p>
 
-
-    
     <?php
         session_start();
+        
+        // $_SESSION["frase1"]
+        // $_POST["frase2"]
 
-        echo "<form method='post' action='ex41pagina3.php'>
-                <input type='number' name='endevina'>
-                <input type='submit'>
-                </form>";
+        $palabras1 = explode(" ", $_SESSION["frase1"]);
+        $palabras2 = explode(" ", $_POST["frase2"]);
 
-        if (isset($_POST["endevina"])) {
-            
-            if ($_POST["endevina"] < $_SESSION["ocult"]) {
-                echo "<br><br>El nombre ocult es més gran.";
-            } else if ($_POST["endevina"] > $_SESSION["ocult"]) {
-                echo "<br><br>El nombre ocult es més petit";
-            } else {
-                echo "<br><br>Felicitats, el nombre es correcte!";
-                echo "<br>Tornar a jugar --> <a href='ex41pagina1.php'>Clic</a>";
+        $coincidencia = false;
+
+        for ($i = 0; $i < count($palabras1); $i++) {
+            for ($j = 0; $j < count($palabras2); $j++) {
+                if ($palabras1[$i] == $palabras2[$j])  {
+                    echo "La paraula '" . $palabras1[$i] . "' està a les dues frases.<br>";
+                    $coincidencia = true;
+                }
             }
         }
 
-        // echo "Nombre ocult: " .$_SESSION["ocult"];
-
+        if (!$coincidencia) {
+            echo "No hi ha cap coincidència.";
+        }
     ?>
 
+    <a href="ex42pagina1.php">Torna a jugar</a>
 </body>
 </html>
